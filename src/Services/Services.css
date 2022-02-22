@@ -1,0 +1,39 @@
+.sera {
+  padding-top: 30px;
+  padding-left: 390px;
+  font-size: 3.7em;
+  font-family: "Akaya Telivigala", cursive;
+}
+.serb {
+  padding-top: 20px;
+  padding-left: 40px;
+  font-size: 3.5em;
+  font-family: "Righteous", cursive;
+  font-weight: 0;
+}
+.serc {
+  width: 500px;
+}
+.serd {
+  font-size: 1.5em;
+  padding-top: 30px;
+  padding-left: 40px;
+  opacity: 0.7;
+}
+.sere {
+  width: 550px;
+}
+.serg {
+  padding-top: 30px;
+  font-size: 1.5em;
+
+  padding-left: 40px;
+}
+.serg {
+  width: 600px;
+}
+.ser-img {
+  position: absolute;
+  padding-top: 50px;
+  padding-left: 600px;
+}

@@ -5,6 +5,7 @@ import "./App.css";
 import Clubbed from "./Clubbed";
 import Contact from "./Contact/Contact";
 import About from "./About/About";
+import Services from "./Services/Services";
 const App = () => {
   return (
     <BrowserRouter>
@@ -12,6 +13,7 @@ const App = () => {
         <Route exact path="/" component={Clubbed} exact />
         <Route path="/contact" component={Contact} />
         <Route path="/about" component={About} />
+        <Route path="/services" component={Services} />
       </main>
     </BrowserRouter>
   );

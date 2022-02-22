@@ -17,7 +17,9 @@ export const Contact = () => {
             <Col>
               <Link to="/">Home</Link>
             </Col>
-            <Col>Services</Col>
+            <Col>
+              <Link to="/services">Services</Link>
+            </Col>
             <Col>
               <Link to="/About">About</Link>
             </Col>
