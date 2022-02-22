@@ -1,0 +1,65 @@
+.Cont-title {
+  text-align: "center";
+  margin: 0 auto 0 auto;
+  padding-top: 20px;
+  font-family: "Righteous", cursive;
+
+  font-weight: 300;
+  font-size: 5em;
+  color: #251f25;
+}
+.Cont-nb {
+  font-size: 1.5em;
+  color: #30475e;
+  margin: 0;
+  padding-top: 30px;
+}
+.Aba {
+  font-size: 4em;
+  font-family: "Akaya Telivigala", cursive;
+  padding-top: 50px;
+  padding-left: 450px;
+}
+.Abb {
+  font-size: 2.5em;
+  padding-left: 570px;
+  padding-top: 50px;
+}
+.Abc {
+  font-size: 1.5em;
+  padding-left: 570px;
+  padding-top: 20px;
+  opacity: 0.8;
+}
+.Abd {
+  font-size: 2.5em;
+  padding-left: 570px;
+  padding-top: 20px;
+}
+.Abe {
+  font-size: 1.5em;
+  padding-left: 570px;
+  padding-top: 20px;
+  opacity: 0.8;
+}
+.About-img {
+  position: absolute;
+  padding-top: 170px;
+}
+.Abf {
+  font-size: 2.5em;
+  padding-top: 250px;
+  padding-left: 100px;
+  font-family: "Akaya Telivigala", cursive;
+}
+.cam {
+  padding-top: 50px;
+}
+.equip {
+  padding-top: 20px;
+  font-size: 1.4em;
+  padding-left: 60px;
+}
+.abbot {
+  padding-bottom: 70px;
+}
