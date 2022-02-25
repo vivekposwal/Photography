@@ -5,7 +5,6 @@ import App from "./App";
 
 //import Demo1 from './Map1';
 import reportWebVitals from "./reportWebVitals";
-import About from "./About/About";
 ReactDOM.render(
   <React.StrictMode>
     <App />
