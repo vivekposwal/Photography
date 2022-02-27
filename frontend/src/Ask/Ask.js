@@ -1,7 +1,10 @@
 import React from "react";
+import { useState } from "react";
 import { Form, Button, Row, Col, Container } from "react-bootstrap";
 import "./Ask.css";
 export const Ask = () => {
+  const [status, setStatus] = useState(false);
+  const [status1, setStatus1] = useState(true);
   return (
     <div className="Askmain">
       <Container>
@@ -57,10 +60,49 @@ export const Ask = () => {
               //onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
-            Check
-          </Button>
+          {status1 ? (
+            <Button
+              onClick={() => {
+                setStatus(!status);
+                setStatus1(!status1);
+              }}
+              variant="primary"
+            >
+              Check
+            </Button>
+          ) : null}
         </Form>
+        <div className="Success">
+          {status ? (
+            <Container>
+              <Row>
+                <h1 className="success1">Query Submitted Successfully</h1>
+              </Row>
+              <Row>
+                <h1 className="success2">
+                  We will answer you shortly through Email
+                </h1>
+              </Row>
+              <Row>
+                <h1 className="success3">
+                  Please feel free to Ask more queries{" "}
+                </h1>
+              </Row>
+            </Container>
+          ) : null}
+        </div>
+        {status ? (
+          <Button
+            onClick={() => {
+              setStatus(!status);
+              setStatus1(!status1);
+            }}
+            variant="primary"
+            type="submit"
+          >
+            Ask more
+          </Button>
+        ) : null}
       </div>
     </div>
   );

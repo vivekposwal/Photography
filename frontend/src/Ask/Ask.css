@@ -31,3 +31,28 @@
   opacity: 0.7;
   color: #884848;
 }
+.Success {
+  background-color: #d3eca7;
+  position: absolute;
+  bottom: 33px;
+  height: 292px;
+}
+.success1 {
+  font-size: 3em;
+  padding-top: 70px;
+  color: #e96158;
+}
+.success2 {
+  font-size: 2em;
+  padding-top: 50px;
+  position: relative;
+  left: 20px;
+  color: #e96158;
+}
+
+.success3 {
+  font-size: 1.5em;
+  padding-top: 20px;
+  color: #884848;
+  margin: 0 auto 0 auto;
+}
