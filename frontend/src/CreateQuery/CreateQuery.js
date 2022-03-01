@@ -1,10 +1,38 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Form, Button, Row, Col, Container } from "react-bootstrap";
-import "./Ask.css";
-export const Ask = () => {
+import "./CreateQuery.css";
+import { useDispatch, useSelector } from "react-redux";
+import { createQueryAction } from "../actions/queryActions";
+
+function CreateQuery({ history }) {
   const [status, setStatus] = useState(false);
   const [status1, setStatus1] = useState(true);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [DnT, setDnT] = useState("");
+  const [ask, setAsk] = useState("");
+  const dispatch = useDispatch();
+  const queryCreate = useSelector((state) => state.queryCreate);
+  const { query } = queryCreate;
+  console.log(query);
+
+  const resetHandler = () => {
+    setName("");
+    setEmail("");
+    setDnT("");
+    setAsk("");
+  };
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    if (!name || !email || !DnT || !ask) return;
+    dispatch(createQueryAction(name, email, DnT, ask));
+    resetHandler();
+    history.push("/");
+  };
+
+  useEffect(() => {}, []);
   return (
     <div className="Askmain">
       <Container>
@@ -27,37 +55,37 @@ export const Ask = () => {
         </Row>
       </Container>
       <div className="Askf">
-        <Form>
+        <Form onSubmit={submitHandler}>
           <Form.Group controlId="name">
             <Form.Control
               type="name"
-              //value={name}
+              value={name}
               placeholder="Enter name"
-              //onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
             />
           </Form.Group>
-          <Form.Group controlId="formBasicEmail">
+          <Form.Group controlId="email">
             <Form.Control
               type="email"
-              //value={email}
+              value={email}
               placeholder="Email"
-              //onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </Form.Group>
-          <Form.Group controlId="formBasicText">
+          <Form.Group controlId="DnT">
             <Form.Control
               type="text"
-              //value={password}
+              value={DnT}
               placeholder="Event Date and Time"
-              //onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => setDnT(e.target.value)}
             />
           </Form.Group>
-          <Form.Group controlId="formBasicText">
+          <Form.Group controlId="ask">
             <Form.Control
               type="text"
-              //value={password}
+              value={ask}
               placeholder="Ask me"
-              //onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => setAsk(e.target.value)}
             />
           </Form.Group>
           {status1 ? (
@@ -67,6 +95,7 @@ export const Ask = () => {
                 setStatus1(!status1);
               }}
               variant="primary"
+              type="submit"
             >
               Check
             </Button>
@@ -98,7 +127,7 @@ export const Ask = () => {
               setStatus1(!status1);
             }}
             variant="primary"
-            type="submit"
+            //type="submit"
           >
             Ask more
           </Button>
@@ -106,5 +135,5 @@ export const Ask = () => {
       </div>
     </div>
   );
-};
-export default Ask;
+}
+export default CreateQuery;

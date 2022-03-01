@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header/Header";
 import Mid from "./Mid/Mid";
 import Artwork from "./Artwork/Artwork";
-import Ask from "./Ask/Ask";
+import CreateQuery from "./CreateQuery/CreateQuery";
 import Bottom from "./Bottom/Bottom";
 export const Clubbed = () => {
   return (
@@ -10,7 +10,7 @@ export const Clubbed = () => {
       <Header />
       <Mid />
       <Artwork />
-      <Ask />
+      <CreateQuery />
       <Bottom />
     </div>
   );
