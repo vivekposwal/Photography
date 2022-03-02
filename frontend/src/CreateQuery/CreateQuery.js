@@ -14,7 +14,7 @@ function CreateQuery({ history }) {
   const [ask, setAsk] = useState("");
   const dispatch = useDispatch();
   const queryCreate = useSelector((state) => state.queryCreate);
-  const { query } = queryCreate;
+  const { loading, query, error } = queryCreate;
   console.log(query);
 
   const resetHandler = () => {
@@ -56,6 +56,7 @@ function CreateQuery({ history }) {
       </Container>
       <div className="Askf">
         <Form onSubmit={submitHandler}>
+          {error}
           <Form.Group controlId="name">
             <Form.Control
               type="name"
@@ -64,7 +65,7 @@ function CreateQuery({ history }) {
               onChange={(e) => setName(e.target.value)}
             />
           </Form.Group>
-          <Form.Group controlId="email">
+          <Form.Group controlId="formBasicEmail">
             <Form.Control
               type="email"
               value={email}
@@ -72,30 +73,31 @@ function CreateQuery({ history }) {
               onChange={(e) => setEmail(e.target.value)}
             />
           </Form.Group>
-          <Form.Group controlId="DnT">
+          <Form.Group controlId="content">
             <Form.Control
-              type="text"
+              type="content"
               value={DnT}
               placeholder="Event Date and Time"
               onChange={(e) => setDnT(e.target.value)}
             />
           </Form.Group>
-          <Form.Group controlId="ask">
+          <Form.Group controlId="content">
             <Form.Control
-              type="text"
+              type="content"
               value={ask}
               placeholder="Ask me"
               onChange={(e) => setAsk(e.target.value)}
             />
           </Form.Group>
+          {loading}
           {status1 ? (
             <Button
+              type="submit"
+              variant="primary"
               onClick={() => {
                 setStatus(!status);
                 setStatus1(!status1);
               }}
-              variant="primary"
-              type="submit"
             >
               Check
             </Button>

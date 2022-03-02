@@ -10,12 +10,22 @@ export const createQueryAction =
       dispatch({
         type: QUERY_CREATE_REQUEST,
       });
-      const { data } = await axios.post(`/api/query/create`, {
-        name,
-        email,
-        DnT,
-        ask,
-      });
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          //Authorization: `Bearer ${userInfo.token}`,
+        },
+      };
+      const { data } = await axios.post(
+        `/api/query/create`,
+        {
+          name,
+          email,
+          DnT,
+          ask,
+        },
+        config
+      );
       dispatch({
         type: QUERY_CREATE_SUCCESS,
         payload: data,

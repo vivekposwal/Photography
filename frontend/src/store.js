@@ -5,15 +5,10 @@ import { queryCreateReducer } from "./reducers/queryReducers";
 const reducer = combineReducers({
   queryCreate: queryCreateReducer,
 });
-//const userInfoFromStorage = localStorage.getItem("userInfo")
-//? JSON.parse(localStorage.getItem("userInfo"))
-//: null;
-//const initialState = { userLogin: { userInfo: userInfoFromStorage } };
 
-//const middleware = [thunk];
+const middleware = [thunk];
 const store = createStore(
-  reducer
-  //initialState,
-  //composeWithDevTools(applyMiddleware(...middleware))
+  reducer,
+  composeWithDevTools(applyMiddleware(...middleware))
 );
 export default store;
