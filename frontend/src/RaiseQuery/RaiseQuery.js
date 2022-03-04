@@ -1,11 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Form, Button, Row, Col, Container } from "react-bootstrap";
-import "./CreateQuery.css";
+import "./RaiseQuery.css";
 import { useDispatch, useSelector } from "react-redux";
 import { createQueryAction } from "../actions/queryActions";
 
-function CreateQuery({ history }) {
+function RaiseQuery({ history }) {
   const [status, setStatus] = useState(false);
   const [status1, setStatus1] = useState(true);
   const [name, setName] = useState("");
@@ -22,6 +22,10 @@ function CreateQuery({ history }) {
     setEmail("");
     setDnT("");
     setAsk("");
+  };
+  const hide = () => {
+    setStatus(!status);
+    setStatus1(!status1);
   };
   const submitHandler = (e) => {
     e.preventDefault();
@@ -56,7 +60,6 @@ function CreateQuery({ history }) {
       </Container>
       <div className="Askf">
         <Form onSubmit={submitHandler}>
-          {error}
           <Form.Group controlId="name">
             <Form.Control
               type="name"
@@ -89,19 +92,9 @@ function CreateQuery({ history }) {
               onChange={(e) => setAsk(e.target.value)}
             />
           </Form.Group>
-          {loading}
-          {status1 ? (
-            <Button
-              type="submit"
-              variant="primary"
-              onClick={() => {
-                setStatus(!status);
-                setStatus1(!status1);
-              }}
-            >
-              Check
-            </Button>
-          ) : null}
+          <Button type="submit" variant="primary" onClick={hide}>
+            Check
+          </Button>
         </Form>
         <div className="Success">
           {status ? (
@@ -138,4 +131,4 @@ function CreateQuery({ history }) {
     </div>
   );
 }
-export default CreateQuery;
+export default RaiseQuery;

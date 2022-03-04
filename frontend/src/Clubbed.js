@@ -2,15 +2,15 @@ import React from "react";
 import Header from "./Header/Header";
 import Mid from "./Mid/Mid";
 import Artwork from "./Artwork/Artwork";
-import CreateQuery from "./CreateQuery/CreateQuery";
+import RaiseQuery from "./RaiseQuery/RaiseQuery";
 import Bottom from "./Bottom/Bottom";
-export const Clubbed = () => {
+const Clubbed = () => {
   return (
     <div>
       <Header />
       <Mid />
       <Artwork />
-      <CreateQuery />
+      <RaiseQuery />
       <Bottom />
     </div>
   );
